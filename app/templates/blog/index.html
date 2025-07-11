@@ -1,0 +1,46 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="selecao">
+    <h1>{{inicio.titulo}}</h1>
+    <p>{{inicio.subtitulo}}</p>
+
+<section class="partida-estilo">
+    <div class="info-topo">
+        <div class="info-esquerda">
+            <span>{{ partida.competicao }}</span>
+            <span class="data">· {{ partida.data }}</span>
+        </div>
+    <span class="status">{{ partida.status }}</span>
+    </div>  
+
+    <div class="placar">
+        <div class="time">
+            <img src="{% static partida.casa.bandeira %}" alt="Casa">
+            <span style="font-weight: bold;">{{ partida.casa.nome }}</span>
+        </div>
+        
+        <div class="resultado">
+            <span class="gols">{{ partida.casa.gols }}</span>
+            <span style="font-size: 20px;">x</span>
+            <span class="gols">{{ partida.visitante.gols }}</span>
+        </div>
+
+        <div class="time">
+            <img src="{% static partida.visitante.bandeira %}" alt="Visitante">
+            <span style="font-weight: bold;">{{ partida.visitante.nome }}</span>
+        </div>
+    </div>
+
+    <div style="font-size: 15px;">
+        GOLL!!! — {{ partida.artilheiro }}
+    </div>
+</section>
+
+<section class="info">
+    <img src="{% static 'blog/selecao.jpg' %}" alt="Time da Seleção">
+    <p>{{inicio.historia}}</p>
+</section>
+
+{% endblock %}

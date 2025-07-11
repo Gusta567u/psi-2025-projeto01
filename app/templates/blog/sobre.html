@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<section class="sobre">
+    {% for info in sobre%}
+    <h2>{{info.titulo}}</h2>
+    <p>{{info.subtitulo}}</p>
+    <p>{{info.criador}}</p>
+    {% endfor %}
+</section>
+{% endblock %}

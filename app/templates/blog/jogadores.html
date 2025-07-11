@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+<h2 style="text-align: center; font-size: 30px; margin-bottom: 50px;">Elenco Atual</h2>
+<section class="jogadores">
+    {% for jogador in elenco %}
+    <div class="jogador-card">
+        <img src="{% static jogador.imagem %}" alt="{{ jogador.nome }}">
+        <h3>{{ jogador.nome }}</h3>
+        <p>{{ jogador.posicao }} | {{ jogador.idade }} anos</p>
+        <p>{{ jogador.nascimento }}</p>
+    </div>
+    {% endfor %}
+
+</section>
+{% endblock %}
